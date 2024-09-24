@@ -18,7 +18,7 @@ async function main() {
     console.log("TokenB deployed to:", tokenB.address);
 
     // Deploy SimpleDEXFactory
-    const DEXFactory = await ethers.getContractFactory("SimpleDEXFactory");
+    const DEXFactory = await ethers.getContractFactory("contracts/SimpleDEXFactory.sol:SimpleDEXFactory");
     const dexFactory = await DEXFactory.deploy();
     await dexFactory.deployed();
     console.log("SimpleDEXFactory deployed to:", dexFactory.address);
@@ -34,6 +34,14 @@ async function main() {
     await tokenB.approve(dexRouter.address, ethers.utils.parseUnits("1000000", 18));
     
     console.log("Approvals set for DEXRouter to spend TokenA and TokenB.");
+
+    // Create a pair for TokenA and TokenB
+    const tx = await dexFactory.createPair(tokenA.address, tokenB.address);
+    const receipt = await tx.wait(); // Wait for the transaction to be mined
+
+    // Get the Pair contract address from the event emitted
+    const pairAddress = receipt.events.find(event => event.event === "PairCreated").args.pair;
+    console.log("Pair created at:", pairAddress);
 }
 
 // Run the script

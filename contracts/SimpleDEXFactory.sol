@@ -18,7 +18,7 @@ contract SimpleDEXFactory {
 
     // Deploy the pair contract
     pair = address(new SimpleDEXPair(token0, token1));
-    getPair[token0][token1] = pair;
+    getPair[token0][token1] = pair;  
     getPair[token1][token0] = pair;
     allPairs.push(pair);
 
