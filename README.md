@@ -79,11 +79,11 @@ Below is the contract address of Factory and Router verified on the polyscan amo
            
 
 TokenA deployed to: 0xa9d4b4f1AE414aDF72136A6aA4beb6CE466ADEB0
-TokenB deployed to: 0xBffa111F747430E84c742204a92AC199e6Be89b5
-DEXFactory deployed to: 0x2aCEE593a577a5FeDC84917DF981D6d93961331a
-DEXRouter deployed to: 0x2258Db39FCdAB899661fBA6a1246Cc7a0F4E9ff0
-Approvals set for DEXRouter to spend TokenA and TokenB.
-Pair created at: 0x3E5C2Cb2F42c91F13F96Ad12aB2956626f2be591
+\n TokenB deployed to: 0xBffa111F747430E84c742204a92AC199e6Be89b5
+\n DEXFactory deployed to: 0x2aCEE593a577a5FeDC84917DF981D6d93961331a
+\n DEXRouter deployed to: 0x2258Db39FCdAB899661fBA6a1246Cc7a0F4E9ff0
+\n Approvals set for DEXRouter to spend TokenA and TokenB.
+\n Pair created at: 0x3E5C2Cb2F42c91F13F96Ad12aB2956626f2be591
 
 
 
