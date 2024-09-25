@@ -39,17 +39,7 @@ When liquidity is added through the `addLiquidity` function, the contract calcul
 - If the pool is empty, the user adds the desired amounts directly.
 - If the liquidity pool already has reserves, the function calculates the optimal amount of the second token required for the added amount of the first token using the following formula:
 
-amountBOptimal
-=
-quote
-(
-amountADesired
-,
-reserveA
-,
-reserveB
-)
-amountBOptimal=quote(amountADesired,reserveA,reserveB)
+`amountBOptimal=quote(amountADesired,reserveA,reserveB)`
 Where:
 
 amountADesired
@@ -67,9 +57,7 @@ When removing liquidity with the `removeLiquidity` function, the contract calcul
 For token swaps, the `swapExactTokensForTokens` function calculates how many output tokens the user will receive for a given input amount using the following logic:
 
 - It uses the `getAmountsOut` function, which calculates the output amounts based on current reserves and the desired input amount:
-  \[
-  \text{amountOut} = \text{getAmountOut(amountIn, reserveIn, reserveOut)}
-  \]
+  `amountOut = getAmountOut(amountIn, reserveIn, reserveOut)`
   
 - The fee for swaps is applied, reducing the effective amount received by the recipient.
 
