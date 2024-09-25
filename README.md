@@ -31,7 +31,7 @@ The `DEXPair` contract holds the reserves for two tokens, handles the minting an
 ## Mechanism
 
 ### Constant Product Formula
-The  DEX uses the constant product formula \(x \times y = k\) to maintain liquidity and pricing for token swaps. Here, \(x\) and \(y\) represent the reserves of the two tokens in a pair, and \(k\) is a constant that must remain unchanged after every swap or liquidity addition/removal. This ensures that the product of the reserves remains constant, providing a predictable pricing mechanism for trades.
+The  DEX uses the constant product formula \(x * y = k\) to maintain liquidity and pricing for token swaps. Here, \(x\) and \(y\) represent the reserves of the two tokens in a pair, and \(k\) is a constant that must remain unchanged after every swap or liquidity addition/removal. This ensures that the product of the reserves remains constant, providing a predictable pricing mechanism for trades.
 
 ### Adding Liquidity
 When liquidity is added through the `addLiquidity` function, the contract calculates the optimal amounts of both tokens to be added based on the current reserves. The following mathematical logic is applied:
