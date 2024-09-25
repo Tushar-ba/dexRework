@@ -17,17 +17,17 @@ async function main() {
     await tokenB.deployed();
     console.log("TokenB deployed to:", tokenB.address);
 
-    // Deploy SimpleDEXFactory
-    const DEXFactory = await ethers.getContractFactory("contracts/SimpleDEXFactory.sol:SimpleDEXFactory");
+    // Deploy DEXFactory
+    const DEXFactory = await ethers.getContractFactory("contracts/DEXFactory.sol:DEXFactory");
     const dexFactory = await DEXFactory.deploy();
     await dexFactory.deployed();
-    console.log("SimpleDEXFactory deployed to:", dexFactory.address);
+    console.log("DEXFactory deployed to:", dexFactory.address);
 
-    // Deploy SimpleDEXRouter
-    const DEXRouter = await ethers.getContractFactory("SimpleDEXRouter");
+    // Deploy DEXRouter
+    const DEXRouter = await ethers.getContractFactory("DEXRouter");
     const dexRouter = await DEXRouter.deploy(dexFactory.address);
     await dexRouter.deployed();
-    console.log("SimpleDEXRouter deployed to:", dexRouter.address);
+    console.log("DEXRouter deployed to:", dexRouter.address);
 
     // Set allowances for the router to spend tokens on behalf of the deployer
     await tokenA.approve(dexRouter.address, ethers.utils.parseUnits("1000000", 18));

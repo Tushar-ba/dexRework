@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-import "./SimpleDEXPair.sol";
+import "./DEXPair.sol";
 
-contract SimpleDEXFactory {
+contract DEXFactory {
     mapping(address => mapping(address => address)) public getPair;
     address[] public allPairs;
 
@@ -11,13 +11,13 @@ contract SimpleDEXFactory {
 
     // Function to create a new pair for two tokens
    function createPair(address tokenA, address tokenB) external returns (address pair) {
-    require(tokenA != tokenB, "SimpleDEXFactory: IDENTICAL_ADDRESSES");
-    require(tokenA != address(0) && tokenB != address(0), "SimpleDEXFactory: ZERO_ADDRESS");
+    require(tokenA != tokenB, "DEXFactory: IDENTICAL_ADDRESSES");
+    require(tokenA != address(0) && tokenB != address(0), "DEXFactory: ZERO_ADDRESS");
     (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
-    require(getPair[token0][token1] == address(0), "SimpleDEXFactory: PAIR_EXISTS");
+    require(getPair[token0][token1] == address(0), "DEXFactory: PAIR_EXISTS");
 
     // Deploy the pair contract
-    pair = address(new SimpleDEXPair(token0, token1));
+    pair = address(new DEXPair(token0, token1));
     getPair[token0][token1] = pair;  
     getPair[token1][token0] = pair;
     allPairs.push(pair);
