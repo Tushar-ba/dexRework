@@ -1,5 +1,14 @@
 #  DEX README
 
+## Installation and other process
+- clone the repo and npm install <br/>
+- npx hardhat compile to compile the project  <br/>
+- add <br/> 
+  POLYGON_API_KEY= <br/>
+  PRIVATE_KEY= <br/>
+  in a .env file
+-npx hardhat run scripts/depoly.js --network mumbai    to deploy the contract
+
 ## Overview
 
 The DEX (Decentralized Exchange) is a Solidity smart contract implementation that facilitates the swapping of ERC20 tokens and allows users to provide liquidity to token pairs. This contract leverages a constant product market maker mechanism, ensuring efficient and fair trades while maintaining liquidity.
