@@ -50,36 +50,9 @@ reserveB
 reserveB is the current reserve of the second token in the pool.
 The quote function typically determines the amount of token B that corresponds to the desired amount of token A, maintaining the constant product invariant of the AMM, ensuring that the prices between the two tokens remain balanced according to their reserves.
 
-### Removing Liquidity
-When removing liquidity with the `removeLiquidity` function, the contract calculates the amounts of tokens to return based on the user's share of the total liquidity. This ensures that withdrawals are proportionate to the user's contribution to the pool. <br/>
-amountA=( 
-totalLiquidity
-userLiquidity
-​
- )×reserveA
-amountB
-=
-(
-userLiquidity
-totalLiquidity
-)
-×
-reserveB
-amountB=( 
-totalLiquidity
-userLiquidity
-​
- )×reserveB
-Where:
-
-userLiquidity
-userLiquidity is the amount of liquidity tokens held by the user.
-totalLiquidity
-totalLiquidity is the total supply of liquidity tokens in the pool.
-reserveA
-reserveA is the current reserve of token A in the pool.
-reserveB
-reserveB is the current reserve of token B in the pool.
+### Removing Liquidity 
+Removing Liquidity
+When removing liquidity with the removeLiquidity function, the contract calculates the amounts of tokens to return based on the user's share of the total liquidity. This ensures that withdrawals are proportionate to the user's contribution to the pool.    give trhe complete read me for this like add liquidity 
 
 ### Swapping Tokens
 For token swaps, the `swapExactTokensForTokens` function calculates how many output tokens the user will receive for a given input amount using the following logic:
