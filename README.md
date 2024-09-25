@@ -6,8 +6,8 @@
 - add <br/> 
   POLYGON_API_KEY= <br/>
   PRIVATE_KEY= <br/>
-  in a .env file
--npx hardhat run scripts/depoly.js --network mumbai    to deploy the contract
+  in a .env file <br/>
+- npx hardhat run scripts/depoly.js --network mumbai    to deploy the contract
 
 ## Overview
 
