@@ -37,10 +37,28 @@ The  DEX uses the constant product formula \(x * y = k\) to maintain liquidity a
 When liquidity is added through the `addLiquidity` function, the contract calculates the optimal amounts of both tokens to be added based on the current reserves. The following mathematical logic is applied:
 
 - If the pool is empty, the user adds the desired amounts directly.
-- If the pool already has reserves, the function calculates the optimal amount of the second token required for the added amount of the first token using the formula:
-  \[
-  \text{amountBOptimal} = \text{quote(amountADesired, reserveA, reserveB)}
-  \]
+- If the liquidity pool already has reserves, the function calculates the optimal amount of the second token required for the added amount of the first token using the following formula:
+
+amountBOptimal
+=
+quote
+(
+amountADesired
+,
+reserveA
+,
+reserveB
+)
+amountBOptimal=quote(amountADesired,reserveA,reserveB)
+Where:
+
+amountADesired
+amountADesired is the amount of the first token you want to add.
+reserveA
+reserveA is the current reserve of the first token in the pool.
+reserveB
+reserveB is the current reserve of the second token in the pool.
+The quote function typically determines the amount of token B that corresponds to the desired amount of token A, maintaining the constant product invariant of the AMM, ensuring that the prices between the two tokens remain balanced according to their reserves.
 
 ### Removing Liquidity
 When removing liquidity with the `removeLiquidity` function, the contract calculates the amounts of tokens to return based on the user's share of the total liquidity. This ensures that withdrawals are proportionate to the user's contribution to the pool.
