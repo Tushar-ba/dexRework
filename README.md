@@ -1,13 +1,13 @@
 #  DEX README
 
 ## Installation and other process
-- clone the repo and npm install <br/>
-- npx hardhat compile to compile the project  <br/>
+- clone the repo and `npm install` <br/>
+- `npx hardhat compile` to compile the project  <br/>
 - add <br/> 
   POLYGON_API_KEY= <br/>
   PRIVATE_KEY= <br/>
   in a .env file <br/>
-- npx hardhat run scripts/depoly.js --network mumbai    to deploy the contract
+- `npx hardhat run scripts/depoly.js --network mumbai`    to deploy the contract
 
 ## Overview
 
