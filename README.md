@@ -1,28 +1,28 @@
-# Simple DEX README
+#  DEX README
 
 ## Overview
 
-The Simple DEX (Decentralized Exchange) is a Solidity smart contract implementation that facilitates the swapping of ERC20 tokens and allows users to provide liquidity to token pairs. This contract leverages a constant product market maker mechanism, ensuring efficient and fair trades while maintaining liquidity.
+The DEX (Decentralized Exchange) is a Solidity smart contract implementation that facilitates the swapping of ERC20 tokens and allows users to provide liquidity to token pairs. This contract leverages a constant product market maker mechanism, ensuring efficient and fair trades while maintaining liquidity.
 
 ## Components
 
-### 1. **SimpleDEXRouter**
-The `SimpleDEXRouter` contract is responsible for managing liquidity and facilitating token swaps. It interacts with the `SimpleDEXFactory` and `SimpleDEXPair` contracts to perform the following operations:
+### 1. **DEXRouter**
+The `DEXRouter` contract is responsible for managing liquidity and facilitating token swaps. It interacts with the `DEXFactory` and `DEXPair` contracts to perform the following operations:
 
 - **Add Liquidity**: Users can add liquidity to a token pair.
 - **Remove Liquidity**: Users can withdraw their liquidity from a token pair.
 - **Token Swaps**: Users can swap an exact amount of one token for another.
 
-### 2. **SimpleDEXFactory**
-The `SimpleDEXFactory` contract creates and manages token pairs. It allows the creation of new liquidity pools for any two ERC20 tokens and keeps track of all pairs created.
+### 2. **DEXFactory**
+The `DEXFactory` contract creates and manages token pairs. It allows the creation of new liquidity pools for any two ERC20 tokens and keeps track of all pairs created.
 
-### 3. **SimpleDEXPair**
-The `SimpleDEXPair` contract holds the reserves for two tokens, handles the minting and burning of liquidity tokens, and facilitates swaps between the two tokens.
+### 3. **DEXPair**
+The `DEXPair` contract holds the reserves for two tokens, handles the minting and burning of liquidity tokens, and facilitates swaps between the two tokens.
 
 ## Mechanism
 
 ### Constant Product Formula
-The Simple DEX uses the constant product formula \(x \times y = k\) to maintain liquidity and pricing for token swaps. Here, \(x\) and \(y\) represent the reserves of the two tokens in a pair, and \(k\) is a constant that must remain unchanged after every swap or liquidity addition/removal. This ensures that the product of the reserves remains constant, providing a predictable pricing mechanism for trades.
+The  DEX uses the constant product formula \(x \times y = k\) to maintain liquidity and pricing for token swaps. Here, \(x\) and \(y\) represent the reserves of the two tokens in a pair, and \(k\) is a constant that must remain unchanged after every swap or liquidity addition/removal. This ensures that the product of the reserves remains constant, providing a predictable pricing mechanism for trades.
 
 ### Adding Liquidity
 When liquidity is added through the `addLiquidity` function, the contract calculates the optimal amounts of both tokens to be added based on the current reserves. The following mathematical logic is applied:
@@ -65,7 +65,7 @@ For token swaps, the `swapExactTokensForTokens` function calculates how many out
 The contract emits several events to log actions such as adding or removing liquidity, executing swaps, and creating new pairs. This provides transparency and traceability for all operations within the DEX.
 
 ### Conclusion
-The Simple DEX implementation is a robust decentralized exchange solution that leverages automated market-making principles to enable seamless token swaps and liquidity management. The design is modular, allowing easy integration and customization for various token pairs and ERC20 tokens. 
+The  DEX implementation is a robust decentralized exchange solution that leverages automated market-making principles to enable seamless token swaps and liquidity management. The design is modular, allowing easy integration and customization for various token pairs and ERC20 tokens. 
 
 For more detailed technical specifications, please refer to the individual contracts: `DEXRouter`, `DEXFactory`, and `DEXPair`.
 
@@ -80,8 +80,8 @@ Below is the contract address of Factory and Router verified on the polyscan amo
 
 TokenA deployed to: 0xa9d4b4f1AE414aDF72136A6aA4beb6CE466ADEB0
 TokenB deployed to: 0xBffa111F747430E84c742204a92AC199e6Be89b5
-SimpleDEXFactory deployed to: 0x2aCEE593a577a5FeDC84917DF981D6d93961331a
-SimpleDEXRouter deployed to: 0x2258Db39FCdAB899661fBA6a1246Cc7a0F4E9ff0
+DEXFactory deployed to: 0x2aCEE593a577a5FeDC84917DF981D6d93961331a
+DEXRouter deployed to: 0x2258Db39FCdAB899661fBA6a1246Cc7a0F4E9ff0
 Approvals set for DEXRouter to spend TokenA and TokenB.
 Pair created at: 0x3E5C2Cb2F42c91F13F96Ad12aB2956626f2be591
 
